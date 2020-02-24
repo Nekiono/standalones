@@ -1,4 +1,4 @@
-haste () {
+hst () {
 	local output returnfile contents
 	if (( $# == 0 )) && [[ $(printf "%s" "$0" | wc -c) > 0 ]]
 		then
@@ -6,7 +6,7 @@ haste () {
 	elif (( $# != 1 )) || [[ $1 =~ ^(-h|--help)$ ]]
 		then
 		echo "Usage: $0 FILE"
-		echo "Upload contents of plaintext document to hastebin."
+		echo "Upload contents of plaintext document to hst.sh."
 		echo "\nInvocation with no arguments takes input from stdin or pipe."
 		echo "Terminate stdin by EOF (Ctrl-D)."
 		return 1
@@ -27,10 +27,10 @@ haste () {
 		then
 		contents=$(cat $1)
 	fi
-	output=$(curl -# -f -XPOST "http://hastebin.com/documents" -d"$contents")
+	output=$(curl -# -f -X POST "http://hst.sh/documents" -d "$contents")
 	if (( $? == 0 )) && [[ $output =~ \"key\" ]]
 		then
-		returnfile=$(sed 's/^.*"key":"/http:\/\/hastebin.com\//;s/".*$//' <<< "$output")
+		returnfile=$(sed 's/^.*"key":"/http:\/\/hst.sh\//;s/".*$//' <<< "$output")
 		if [[ -n $returnfile ]]
 			then
 			echo "$returnfile"
