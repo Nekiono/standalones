@@ -1,5 +1,19 @@
 # hst.sh script
 
+## Install
+
+You need curl to install and use hst. The binary will be saved to /usr/bin/hst - make sure you have the sufficient access permissions. 
+
+`curl -sfL get.hst.sh | bash`
+
+## Why
+
+I found all other haste clients too hard to install or requiring too many dependencies (especially the official one).
+
+This just makes it a one-liner and doesn't require anything apart from bash, inbuilt commands, and curl.
+
+## Credit where it's due
+
 This contains the hst.sh script, adapted from [diethnis' hastebin standalone sh script](https://github.com/diethnis/standalones).
 
 The original is licensed under The Unlicense.
