@@ -9,7 +9,7 @@ elif (( $# != 1 )) || [[ $1 =~ ^(-h|--help)$ ]]
 	then
 	echo "Usage: $0 FILE"
 	echo "Upload contents of plaintext document to hst.sh."
-	echo "\nInvocation with no arguments takes input from stdin or pipe."
+	echo "Invocation with no arguments takes input from stdin or pipe."
 	echo "Terminate stdin by EOF (Ctrl-D)."
 	exit 1
 elif [[ -e $1 && ! -f $1 ]]
