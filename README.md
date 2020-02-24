@@ -1,10 +1,20 @@
-# hst.sh script
+# hst.sh
 
 ## Install
 
+`curl -sfL get.hst.sh | bash`
+
 You need `curl` to install and use hst. If you don't have it, the install usually looks like `apt install curl -y`, `pacman -S curl`, or similar. The binary will be saved to /usr/bin/hst - make sure you have the sufficient access permissions.
 
-`curl -sfL get.hst.sh | bash`
+## Usage
+
+See `hst -h`.
+
+Some examples: 
+
+`echo $PWD | hst`
+
+`hst /etc/nginx/sites-enabled/ravy.pink.conf`
 
 ## Why
 
