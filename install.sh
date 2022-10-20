@@ -1,3 +1,3 @@
 #!/bin/bash
-curl -sfL https://sh.hst.sh > /usr/bin/hst
-chmod +x /usr/bin/hst
+curl -sfL https://sh.hst.sh > $HOME/.local/bin/hst
+chmod +x $HOME/.local/bin/hst
